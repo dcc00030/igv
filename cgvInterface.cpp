@@ -60,32 +60,28 @@ void cgvInterface::set_glutKeyboardFunc(unsigned char key, int x, int y) {
   switch (key) {
     case 'x': // TODO: Section A: rotate positive X 
 		interface.scene.rotateAngleX(10);
-		glRotatef(interface.scene.getX(), 1.0, 0.0, 0.0);
+		
 		interface.scene.render();
 		break;
     case 'X': // TODO: Section A: rotate negative X  
 		interface.scene.rotateAngleX(-10);
-		glRotatef(interface.scene.getX(), 1.0, 0.0, 0.0);
+		
 		interface.scene.render();
 		break;
     case 'y': // TODO: Section A: rotate positive Y 
 		interface.scene.rotateAngleY(10);
-		glRotatef(interface.scene.getY(), 0.0, 1.0, 0.0);
 		interface.scene.render();
 		break;
     case 'Y': // TODO: Section A: rotate negative Y 
 		interface.scene.rotateAngleY(-10);
-		glRotatef(interface.scene.getY(), 0.0, 1.0, 0.0);
 		interface.scene.render();
 		break;
     case 'z': // TODO: Section A: rotate positive Z 
 		interface.scene.rotateAngleZ(10);
-		glRotatef(interface.scene.getZ(), 0.0, 1.0, 0.0);
 		interface.scene.render();
 		break;
     case 'Z': // TODO: Section C: rotate negative Z 
 		interface.scene.rotateAngleZ(-10);
-		glRotatef(interface.scene.getZ(), 0.0, 1.0, 0.0);
 		interface.scene.render();
 		break; 
 		

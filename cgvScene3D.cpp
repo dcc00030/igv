@@ -213,8 +213,9 @@ void cgvScene3D::render(void) {
 
 	  // draw the axes
 	  if (axes) draw_axes();
-
-
+	  glRotatef(getX(), 1.0, 0.0, 0.0);
+	  glRotatef(getY(), 0.0, 1.0, 0.0);
+	  glRotatef(getZ(), 0.0, 0.0, 1.0);
 
  		//glLightfv(GL_LIGHT0,GL_POSITION,light0); // the light is placed here and it moves with the scene
 	  glMaterialfv(GL_FRONT,GL_EMISSION,mesh_color);
