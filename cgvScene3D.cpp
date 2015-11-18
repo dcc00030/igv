@@ -45,7 +45,7 @@ void
 cgvScene3D::set(int scene) {
 	if (scene == sceneSelected) return; 
 
-	if (mesh!=NULL) delete mesh; 
+	//if (mesh!=NULL) delete mesh; 
 
 	switch (scene) {
 	case 1: //Initial Octahedron
@@ -98,70 +98,21 @@ cgvScene3D::setOctahedronWithMeshes(bool vertexArray) {
 
 	// TODO: Sections B and C: insert here the code to create a mesh equivalent to the octahedron. 
 	//       Use the appropriate constructor of cgvTriangleMesh. 
-	/*float *vertices = new float[6*3];
-	unsigned int *triangles = new unsigned int[8*3];
-	vertices[0] = 1;
-	vertices[1] = 0;
-	vertices[2] = 0;
+	 GLfloat *vertices =
+		new GLfloat[72]{ 1.0f, 0.0f, 0.0f,    0.0f, 1.0f, 0.0f,    0.0f, 0.0f, 1.0f,
+		0.0f, 0.0f, 1.0f,    0.0f, 1.0f, 0.0f,   -1.0f, 0.0f, 0.0f,
+		-1.0f, 0.0f, 0.0f,   0.0f, 1.0f, 0.0f,    0.0f ,0.0f ,-1.0f,
+		0.0f, 0.0f, -1.0f,   0.0f, 1.0f, 0.0f,    1.0f, 0.0f, 0.0f,
+		1.0f, 0.0f, 0.0f,    0.0f, 0.0f, 1.0f,    0.0f, -1.0f, 0.0f,
+		0.0f, -1.0f, 0.0f,   0.0f, 0.0f, 1.0f,   -1.0f, 0.0f, 0.0f,
+		-1.0f, 0.0f, 0.0f,   0.0f, 0.0f, -1.0f,   0.0f, -1.0f, 0.0f,
+		0.0f, -1.0f, 0.0f,   0.0f, 0.0f, -1.0f,   1.0f, 0.0f, 0.0f };
 
-	vertices[3] = 0;
-	vertices[4] = 0;
-	vertices[5] = 1;
+	unsigned int triangles[] = { 1, 2, 3, 4, 5, 6, 3, 2, 5 };
 
-	vertices[6] = -1;
-	vertices[7] = 0;
-	vertices[8] = 0;
-
-	vertices[9] = 0;
-	vertices[10] = 0;
-	vertices[11] = 1;
-
-	vertices[12] = 0;
-	vertices[13] = 1;
-	vertices[14] = 0;
-
-	vertices[15] = 0;
-	vertices[16] = -1;
-	vertices[17] = 0;
+	mesh = new cgvTriangleMesh(72, vertices, 8, triangles, vertexArray);
 
 
-	//we calculate the faces of the figure
-
-	triangles[0] = 6;
-	triangles[1] = 9;
-	triangles[2] = 12;
-
-	triangles[3] = 9;
-	triangles[4] = 3;
-	triangles[5] = 12;
-
-	triangles[6] = 0;
-	triangles[7] = 3;
-	triangles[8] = 12;
-
-	triangles[9] = 0;
-	triangles[10] = 6;
-	triangles[11] = 12;
-
-	triangles[12] = 6;
-	triangles[13] = 9;
-	triangles[14] = 15;
-
-	triangles[15] = 9;
-	triangles[16] = 3;
-	triangles[17] = 15;
-
-	triangles[18] = 0;
-	triangles[19] = 3;
-	triangles[20] = 15;
-
-	triangles[21] = 0;
-	triangles[22] = 6;
-	triangles[23] = 15;
-
-	
-	mesh = new  cgvTriangleMesh(6, vertices, 8, triangles, vertexArray);
-*/	 
 }
 
 void 
